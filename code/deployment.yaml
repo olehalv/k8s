@@ -18,8 +18,7 @@ spec:
           image: linuxserver/code-server
           ports:
             - name: http
-              containerPort: 8080
-              targetPort: 8443
+              containerPort: 8443
           envFrom:
             - configMapRef:
                 name: code-config
