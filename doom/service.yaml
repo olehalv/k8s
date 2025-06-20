@@ -9,5 +9,5 @@ spec:
     app: doom
   ports:
     - name: web
-      port: 80
+      port: 8080
       targetPort: http
