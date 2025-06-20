@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doom
+  namespace: olehalv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doom
+  template:
+    metadata:
+      labels:
+        app: doom
+    spec:
+      containers:
+        - name: doom
+          image: kasmweb/doom:latest
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: doom-config
+          resources:
+            requests:
+              cpu: 10m
+              memory: 512Mi
+            limits:
+              memory: 1024Mi
