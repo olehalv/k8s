@@ -18,7 +18,7 @@ spec:
           image: kasmweb/doom:1.17.0
           ports:
             - name: http
-              containerPort: 6901
+              containerPort: 4902
           envFrom:
             - configMapRef:
                 name: doom-config
