@@ -15,10 +15,10 @@ spec:
     spec:
       containers:
         - name: doom
-          image: kasmweb/doom:1.17.0
+          image: mattipaksula/http-doom
           ports:
             - name: http
-              containerPort: 6901
+              containerPort: 8080
           envFrom:
             - configMapRef:
                 name: doom-config
