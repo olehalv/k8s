@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: code
+  namespace: olehalv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: code
+  template:
+    metadata:
+      labels:
+        app: code
+    spec:
+      containers:
+        - name: code
+          image: linuxserver/code-server
+          ports:
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: code-config
+          resources:
+            requests:
+              cpu: 10m
+              memory: 512Mi
+            limits:
+              memory: 1024Mi
