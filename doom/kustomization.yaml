@@ -11,4 +11,4 @@ configMapGenerator:
   - name: doom-config
     namespace: olehalv
     literals:
-      - VNC_PW=spk
+      - VNC_PW=password
