@@ -9,5 +9,5 @@ spec:
     app: code
   ports:
     - name: web
-      port: 8080
+      port: 80
       targetPort: http
