@@ -1,19 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: whoami
+  namespace: olehalv
 spec:
+  replicas: 3
   selector:
     matchLabels:
-      app: nginx
-  replicas: 2
+      app: whoami
   template:
     metadata:
       labels:
-        app: nginx
+        app: whoami
     spec:
       containers:
-        - name: nginx
-          image: nginx:latest
+        - name: whoami
+          image: ghcr.io/traefik/whoami:latest
           ports:
-            - containerPort: 80
+            - name: http
+              containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: whoami-config
+          resources:
+            requests:
+              cpu: 10m
+              memory: 12Mi
+            limits:
+              memory: 24Mi
