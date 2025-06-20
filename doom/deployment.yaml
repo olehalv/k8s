@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: doom
-          image: kasmweb/doom:latest
+          image: kasmweb/doom:1.17.0
           ports:
             - name: http
               containerPort: 8080
