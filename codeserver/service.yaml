@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: codeserver
+  namespace: olehalv
+spec:
+  type: ClusterIP
+  selector:
+    app: codeserver
+  ports:
+    - name: web
+      port: 80
+      targetPort: http
