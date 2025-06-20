@@ -8,7 +8,7 @@ spec:
     - name: gke-gateway
       namespace: gateway
   hostnames:
-    - doom-olehalv.s9n.no
+    - code-olehalv.s9n.no
   rules:
     - matches:
         - path:
